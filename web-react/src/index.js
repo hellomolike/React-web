@@ -36,7 +36,7 @@ export default class RequestView extends React.Component {
 		  mode:"cors",
 		   headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "Access-Control-Allow-Origin":"*"
+          "Access-Control-Allow-Origin":"*",
 		    },
 		  }).then(res => res.json())
       .then(data => {

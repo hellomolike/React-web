@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src config example --ext .js,.jsx --fix",
-    "start": "better-npm-run start",
-    "test": "better-npm-run test",
+    "start": "set PORT=3002 && better-npm-run start",
+    "test": "set PORT=3002 && better-npm-run test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build:example": "rimraf build && better-npm-run build:example",
     "deploy": "rimraf lib && better-npm-run prod"

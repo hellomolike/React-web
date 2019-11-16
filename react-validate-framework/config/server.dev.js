@@ -32,5 +32,5 @@ app.listen(3000, (err) => {
     debug(err);
     return;
   }
-  debug('Listening at http://localhost:3000');
+  debug('Listening at http://localhost:3002');
 });
