@@ -35,11 +35,11 @@ const routes = (
         <IndexRoute component={Welcome}/>
 
         <Route path="index">
-          <Route path="option1" tableName="test" getComponent={DBTableContainer}/>
-          <Route path="option2" tableName="testSms" getComponent={DBTableContainer}/>
-          <Route path="option3" tableName="testAction" getComponent={DBTableContainer}/>
-          <Route path="option4" tableName="testAc" getComponent={DBTableContainer}/>
-          <Route path="option5" component={JobPackage}/>
+          <Route path="option19" tableName="test" getComponent={DBTableContainer}/>
+          <Route path="option18" tableName="testSms" getComponent={DBTableContainer}/>
+          <Route path="option17" tableName="testAction" getComponent={DBTableContainer}/>
+          <Route path="option16" tableName="testAc" getComponent={DBTableContainer}/>
+          <Route path="option1" component={JobPackage}/>
         </Route>
         
         <Route path="daohang">
