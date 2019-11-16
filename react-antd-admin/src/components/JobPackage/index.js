@@ -3,8 +3,10 @@ import { Checkbox } from 'antd';
 import './index.less';
 import Time from './time';
 import Other from './other';
-import { Button } from 'antd';
+import { Button  } from 'antd';
 import { Input } from 'antd';
+import {  Form } from 'antd';
+
 
 
 
@@ -48,27 +50,27 @@ class JobPackage extends Component {
     render() {
         return (
 
-            <form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit}>
                 <fieldset >
                     <legend>工作概述</legend>
                     <div className='from-wrapper'>
                         <div className="from-in">
                             <div className="from-inner">
                                 <div className="from-flex">
-                                    <span>工单任务编号:</span>
+                                   工单任务编号
                                     <Input size="large" placeholder="large size"  value="T185513 " className="from-item"/>
                                     {/* <input type="text" value="T190929902" className="from-item"></input> */}
                                 </div>
                                 <div className="from-flex">
-                                    <span>生产单元:</span>
+                                    生产单元:
                                     <Input type="text" value="霞浦0#项目" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>系统号:</span>
+                                    系统号：
                                     <Input type="text" value="ABP" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>专业:</span>
+                                    专业：
                                     <select className="from-item" value={this.state.a} onChange={this.handleChangeA}>
                                         <option value="工艺">工艺</option>
                                         <option value="电气">电气</option>
@@ -78,26 +80,26 @@ class JobPackage extends Component {
                                 </div>
 
                                 <div className="from-flex">
-                                    <span>运行隔离:</span>
+                                    运行隔离：
                                     <Checkbox onChange={onChange}>日常</Checkbox>
                                     <Checkbox onChange={onChange}>大修</Checkbox>
                                 </div>
                             </div>
                             <div className="from-inner">
                                 <div className="from-flex">
-                                    <span>任务状态:</span>
+                                    任务状态：
                                     <Input type="text" value="工作包完成准备" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>电厂代码:</span>
+                                    电厂代码
                                     <Input type="text" value="XNPC" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>设备编码:</span>
+                                   设备编码：
                                     <Input type="text" value="0ABPWX001" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>优先级:</span>
+                                   优先级：
                                     <select className="from-item" value={this.state.b} onChange={this.handleChangeB}>
                                         <option value="立即响应y">立即响应</option>
                                         <option value="24小时响应">24小时响应</option>
@@ -106,26 +108,26 @@ class JobPackage extends Component {
                                     </select>
                                 </div>
                                 <div className="from-flex">
-                                    <span>大修代码:</span>
+                                    大修代码：
                                     <Input type="text" value="101" className="from-item"></Input>
                                 </div>
 
                             </div>
                             <div className="from-inner">
                                 <div className="from-flex">
-                                    <span>工单类型:</span>
+                                    工单类型：
                                     <Input type="text" value="标准工单" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span> 机组号:</span>
+                                    机组号：
                                     <Input type="text" value="0" className="from-item" />
                                 </div>
                                 <div className="from-flex">
-                                    <span>设备/系统名称:</span>
+                                    设备/系统名称：
                                     <Input type="text" value="0 ABP 启动给水泵入口放气阀" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                    <span>设备分级:</span>
+                                    设备分级：
                                     <select className="from-item" value={this.state.c} onChange={this.handleChangeC}>
                                         <option value="A关键">A关键</option>
                                         <option value="B关键">B关键</option>
@@ -134,7 +136,7 @@ class JobPackage extends Component {
                                     </select>
                                 </div>
                                 <div className="from-flex">
-                                    <span>变更项目编号:</span>
+                                    变更项目编号：
                                     <Input type="text" className="from-item"></Input>
                                 </div>
                             </div>
@@ -142,37 +144,37 @@ class JobPackage extends Component {
 
                         <div>
                             <div className="from-flex">
-                                <span>工作任务标题:</span>
-                                <input type="text" value="测试工作申请【PC-20190918】" className="from-items"></input>
+                                工作任务标题：
+                                <input type="text" value="    测试工作申请【PC-20190918】" className="from-items"></input>
                             </div>
                             <div className="from-flexs">
                                 <div className="from-items">
                                     <div className="from-flex">
-                                        <span>等效工单编号:</span>
+                                       等效工单编号：
                                         <input type="text" className="from-item"></input>
                                     </div>
                                 </div>
                                 <div className="from-items">
                                     <div className="from-flex">
-                                        <span>取消/等效类型:</span>
+                                       取消/等效类型:
                                         <input type="text" className="from-item"></input>
                                     </div>
                                 </div>
                                 <div className="from-items">
                                     <div className="from-flex">
-                                        <span>操作人:</span>
+                                       操作人：
                                         <input type="text" className="from-item"></input>
                                     </div>
                                 </div>
                             </div>
                             <div className="from-items">
                                 <div className="from-flex">
-                                    <span>时间:</span>
+                                   时间：
                                     <input type="text" value="" className="from-items"></input>
                                 </div>
                             </div>
                             <div className="from-flex">
-                                <span>原因:</span>
+                                原因：
                                 <textarea name="" rows="4" className="from-items"></textarea>
                             </div>
                         </div>
@@ -199,7 +201,7 @@ class JobPackage extends Component {
                 <Button  id="submit_but" type="primary">提交</Button>
                 </div>
                 
-            </form>
+            </Form>
 
         );
     }
