@@ -3,9 +3,9 @@ import { Checkbox } from 'antd';
 import './index.less';
 import Time from './time';
 import Other from './other';
-import { Button  } from 'antd';
+import { Button } from 'antd';
 import { Input } from 'antd';
-import {  Form } from 'antd';
+import { Form } from 'antd';
 
 
 
@@ -16,10 +16,11 @@ function onChange(e, value) {
     console.log(`checked = `, e);
 }
 // 将引入类变成常量，用来继承
-const Component = React.Component
+const Component = React.Component;
+
 
 //注意这个类，必须继承自Component
-class JobPackage extends Component {
+class WorkOverView extends Component {
 
     constructor(props) {
         super(props);
@@ -57,9 +58,9 @@ class JobPackage extends Component {
                         <div className="from-in">
                             <div className="from-inner">
                                 <div className="from-flex">
-                                   工单任务编号
-                                    <Input size="large" placeholder="large size"  value="T185513 " className="from-item"/>
-                                    {/* <input type="text" value="T190929902" className="from-item"></input> */}
+                                    工单任务编号
+                                    <Input size="large" placeholder="large size" value="T185513 " className="from-item" />
+                                    {/* <Input type="text" value="T190929902" className="from-item"></Input> */}
                                 </div>
                                 <div className="from-flex">
                                     生产单元:
@@ -95,11 +96,11 @@ class JobPackage extends Component {
                                     <Input type="text" value="XNPC" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                   设备编码:
+                                    设备编码:
                                     <Input type="text" value="0ABPWX001" className="from-item"></Input>
                                 </div>
                                 <div className="from-flex">
-                                   优先级:
+                                    优先级:
                                     <select className="from-item" value={this.state.b} onChange={this.handleChangeB}>
                                         <option value="立即响应y">立即响应</option>
                                         <option value="24小时响应">24小时响应</option>
@@ -144,32 +145,32 @@ class JobPackage extends Component {
                         <div>
                             <div className="from-flex">
                                 工作任务标题:
-                                <input type="text" value="    测试工作申请【PC-20190918】" className="from-items"></input>
+                                <Input type="text" value=" 测试工作申请【PC-20190918】" className="from-items"></Input>
                             </div>
                             <div className="from-flexs">
                                 <div className="from-items">
                                     <div className="from-flex">
-                                       等效工单编号:
-                                        <input type="text" className="from-item"></input>
+                                        等效工单编号:
+                                        <Input type="text" className="from-item"></Input>
                                     </div>
                                 </div>
                                 <div className="from-items">
                                     <div className="from-flex">
-                                       取消/等效类型:
-                                        <input type="text" className="from-item"></input>
+                                        取消/等效类型:
+                                        <Input type="text" className="from-item"></Input>
                                     </div>
                                 </div>
                                 <div className="from-items">
                                     <div className="from-flex">
-                                       操作人:
-                                        <input type="text" className="from-item"></input>
+                                        操作人:
+                                        <Input type="text" className="from-item"></Input>
                                     </div>
                                 </div>
                             </div>
                             <div className="from-items">
                                 <div className="from-flex">
-                                   时间:
-                                    <input type="text" value="" className="from-items"></input>
+                                    时间:
+                                    <Input type="text" value="" className="from-items"></Input>
                                 </div>
                             </div>
                             <div className="from-flex">
@@ -192,14 +193,17 @@ class JobPackage extends Component {
                     <div>
                         <Other />
                     </div>
+
+                   
                 </fieldset>
-                {/* <input id="bottom" type="submit" value="提交" /> */}
+                {/* <Input id="bottom" type="submit" value="提交" /> */}
                 <div>
-                <Button  id="save_but" type="primary">保存</Button>   
-                
-                <Button  id="submit_but" type="primary">提交</Button>
+                    <Button id="save_but" type="primary">保存</Button>
+
+                    <Button id="submit_but" type="primary">提交</Button>
                 </div>
-                
+               
+
             </Form>
 
         );
@@ -207,6 +211,6 @@ class JobPackage extends Component {
 }
 
 //抛出类,这是es6 语法 必须这么写
-export default JobPackage;
+export default WorkOverView;
 //jsx 简单理解 ，遇到 <> 就解析为html，遇到{}就解析为js
 

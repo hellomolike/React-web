@@ -14,7 +14,9 @@ import App from './components/App';
 import Welcome from './components/Welcome';
 import Error from './components/Error';
 import Hello from './components/Hello';
-import JobPackage from './components/JobPackage';
+import WorkOverView from './components/WorkPackageEditing/WorkOverView';
+import WorkOrder from './components/WorkPackageEditing/WorkOrder';
+
 //import DBTable from './components/DBTable';
 
 // 将DBTable组件做成动态路由, 减小bundle size
@@ -39,7 +41,10 @@ const routes = (
           <Route path="option18" tableName="testSms" getComponent={DBTableContainer}/>
           <Route path="option17" tableName="testAction" getComponent={DBTableContainer}/>
           <Route path="option16" tableName="testAc" getComponent={DBTableContainer}/>
-          <Route path="option1" component={JobPackage}/>
+          <Route path="option1" component={WorkOverView}/>
+          <Route path="option2" component={WorkOrder}/>
+
+
         </Route>
         
         <Route path="daohang">
