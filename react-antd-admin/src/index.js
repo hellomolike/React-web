@@ -4,8 +4,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux'
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import { Provider } from 'react-redux'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import './utils/index.js';  // 引入各种prototype辅助方法
 import store from 'redux/store.js';  // redux store
 
@@ -13,9 +13,13 @@ import store from 'redux/store.js';  // redux store
 import App from './components/App';
 import Welcome from './components/Welcome';
 import Error from './components/Error';
-import Hello from './components/Hello';
-import WorkOverView from './components/WorkPackageEditing/WorkOverView';
-import WorkOrder from './components/WorkPackageEditing/WorkOrder';
+// import Hello from './components/Hello';
+// import WorkOverView from './components/WorkPackageEditing/WorkOverView';
+// import WorkOrder from './components/WorkPackageEditing/WorkOrder';
+// import Isolation from './components/WorkPackageEditing/Isolation/index.js';
+import ReadyPackage from './components/WorkPackageEditing/ReadyPackage/index.js';
+import testTC from './components/WorkPackageEditing/TestTC/index.js';
+import ButtonEvent from './components/WorkPackageEditing/ButtonEvent/index.js';
 
 //import DBTable from './components/DBTable';
 
@@ -34,58 +38,21 @@ const routes = (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={Welcome}/>
-
+        <IndexRoute component={Welcome} />
         <Route path="index">
-          <Route path="option19" tableName="test" getComponent={DBTableContainer}/>
-          <Route path="option18" tableName="testSms" getComponent={DBTableContainer}/>
-          <Route path="option17" tableName="testAction" getComponent={DBTableContainer}/>
-          <Route path="option16" tableName="testAc" getComponent={DBTableContainer}/>
-          <Route path="option1" component={WorkOverView}/>
-          <Route path="option2" component={WorkOrder}/>
-
-
+          <Route path="option19" tableName="test" getComponent={DBTableContainer} />
         </Route>
-        
-        <Route path="daohang">
-          <Route path="555" component={Hello}/>
-          <Route path="sanji">
-            <Route path="666" component={Hello}/>
-            <Route path="777" component={Hello}/>
-            <Route path="888" component={Hello}/>
-            <Route path="999" component={Hello}/>
+        <Route path="GoingOnmv">
+          <Route path="GoingOn3">
+            <Route path="GoingOn3-1" component={ReadyPackage} />
+            <Route path="GoingOn3-2" component={testTC} />
+            <Route path="GoingOn3-3" component={ButtonEvent} />
           </Route>
         </Route>
 
-        <Route path="test">
-          <Route path="aaa" component={Hello}/>
-          <Route path="bbb" component={Hello}/>
-          <Route path="ccc" component={Hello}/>
-          <Route path="sanjiaaa">
-            <Route path="666aa" component={Hello}/>
-          </Route>
-          <Route path="sanjibbb">
-            <Route path="666bb" component={Hello}/>
-          </Route>
-        </Route>
+       
 
-        <Route path="headerMenu5">
-          <Route path="headerMenu5000000" component={Hello}/>
-          <Route path="headerMenu51111">
-            <Route path="headerMenu51111aa" component={Hello}/>
-            <Route path="headerMenu51111bb" component={Hello}/>
-          </Route>
-          <Route path="headerMenu52222">
-            <Route path="headerMenu52222aa" component={Hello}/>
-            <Route path="headerMenu52222bb" component={Hello}/>
-          </Route>
-        </Route>
-
-        <Route path="headerMenu4" component={Hello}/>
-        <Route path="alone" component={Hello}/>
-        <Route path="alone2" component={Hello}/>
-
-        <Route path="*" component={Error}/>
+        <Route path="*" component={Error} />
 
       </Route>
     </Router>

@@ -14,131 +14,217 @@
 const sidebarMenu = [
   {
     key: 'index',  // route时url中的值
-    name: '工作包编辑',  // 在菜单中显示的名称
-    icon: 'play-circle',  // 图标是可选的
+    name: '我的工作台',  // 在菜单中显示的名称
+    icon: 'play-circle',  // 图标是可选
+  },
+  {
+    key: 'devicmv',
+    name: '设备管理',
+    icon: 'clock-circle',
     child: [
       {
         key: 'option1',
-        name: '工作概述',
-        icon: 'bulb',   // 二级三级菜单也可以带图标
-        subs:[
-          {
-            key: 'option3',
-            name: '隔离安措要求',
-            icon: 'bulb',
-          }
-        ]
+        name: '系统信息维护',
       },
       {
         key: 'option2',
-        name: '工作指令',
-        icon: 'android',
+        name: '设备类型维护',
       },
       {
         key: 'option3',
-        name: '隔离安措要求',
-        icon: 'bulb',
+        name: '系统分类维护',
       },
       {
         key: 'option4',
-        name: '先决条件',
-        icon: 'android',
+        name: '厂房信息维护',
       },
       {
         key: 'option5',
-        name: '工作申请',
-        icon: 'edit',
+        name: '设备管辖处室维护',
       },
       {
         key: 'option6',
-        name: '工作前',
-        icon: 'android',
+        name: '设备基础信息配置',
       },
       {
         key: 'option7',
-        name: '执行规程',
-        icon: 'edit',
+        name: '设备信息维护',
       },
-      {
-        key: 'option8',
-        name: '关联文档',
-        icon: 'edit',
-      },
-       {
-        key: 'option9',
-        name: '质量计划',
-        icon: 'copy',
-      },
-       {
-        key: 'option10',
-        name: '相关人员',
-        icon: 'android',
-      },
-      {
-        key: 'option11',
-        name: '风险分析',
-        icon: 'android',
-      },
-      {
-        key: 'option12',
-        name: '隔离许可证',
-        icon: 'android',
-      },
-      {
-        key: 'option13',
-        name: '配合工作',
-        icon: 'android',
-      },
-      {
-        key: 'option14',
-        name: '许可证',
-        icon: 'android',
-      },
-      {
-        key: 'option15',
-        name: '工器具，物料',
-        icon: 'android',
-      },
-      {
-        key: 'option16',
-        name: '公会后',
-        icon: 'android',
-      },
-      {
-        key: 'option17',
-        name: '维修报告',
-        icon: 'copy',
-      },
-      {
-        key: 'option18',
-        name: '维修记录',
-        icon: 'android',
-      },
-      {
-        key: 'option19',
-        name: '签入签出历史',
-        icon: 'copy',
-      },
-      
     ],
   },
   {
-    key: 'alone',
-    name: '我没有子菜单',
+    key: 'plansmv',
+    name: '计划管理',
     icon: 'clock-circle',
-  },
-  {
-    key: 'alone2',
-    name: '我没有图标',
-  },
-  {
-    key: 'noiconhaha',
-    name: '又一个没图标的',
     child: [
       {
-        key: 'nesnesnes',
-        name: 'N64',
+        key: 'plan1',
+        name: '调试计划',
       },
+      {
+        key: 'plan2',
+        name: '大修计划',
+      },
+      {
+        key: 'plan3',
+        name: '日常计划',
+      },
+    ],
+  },
+  {
+    key: 'fixwm',
+    name: '调试工作管理',
+    icon: 'clock-circle',
+    child:[
+      {
+        key:'fixwm1',
+        name:'缺陷工作申请',
+      },
+      {
+        key:'fixwm2',
+        name:'保养工作申请',
+      },
+      {
+        key:'fixwm3',
+        name:'配合指令单',
+      },
+      {
+        key:'fixwm4',
+        name:'简易消缺工作申请单',
+      },
+      {
+        key:'fixwm5',
+        name:'调试工单',
+      },
+      {
+        key:'fixwm6',
+        name:'工单自自助服务',
+      },
+      {
+        key:'fixwm7',
+        name:'维修报告',
+      },
+    ],
+  },
+  {
+    key: 'GoingOnmv',
+    name: '运行工作管理',
+    icon: 'clock-circle',
+    child:[
+      {
+        key:'GoingOn1',
+        name:'工作申请管理'
+      },
+      {
+        key:'GoingOn2',
+        name:'简单维修管理'
+      },
+      {
+        key:'GoingOn3',
+        name:'工作包管理',
+        child:[
+          {
+            key:'GoingOn3-1',
+            name :'工作包准备'
+          },
+          {
+            key:'GoingOn3-2',
+            name :'测试标签页'
+          },
+          {
+            key:'GoingOn3-3',
+            name :'测试弹窗'
+          },
+
+        ],
+      },
+      {
+        key:'GoingOn4',
+        name:'工作计划管理'
+      },
+      {
+        key:'GoingOn5',
+        name:'开完工会签到管理'
+      },
+      {
+        key:'GoingOn6',
+        name:'工单信息管理'
+      },
+      {
+        key:'GoingOn7',
+        name:'工作实施管理'
+      },
+      {
+        key:'GoingOn8',
+        name:'开完工许可管理'
+      },
+      {
+        key:'GoingOn9',
+        name:'报告信息管理'
+      },
+      {
+        key:'GoingOn10',
+        name:'工作许可证管理'
+      },
+      {
+        key:'GoingOn11',
+        name:'预防性维修管理'
+      },
+    ],
+  },
+  {
+    key: 'Isolationmv',
+    name: '隔离管理',
+    icon: 'clock-circle',
+    child:[
+      {
+        key :'Isolation1',
+        name :'隔离许可管理'
+      }
+    ],
+  },
+  {
+    key: 'parameterConfig',
+    name: '参数配置',
+    icon: 'clock-circle',
+    child:[
+      {
+        key :'parameterConfig1',
+        name :'大修标识配置'
+      },
+      {
+        key :'parameterConfig2',
+        name :'许可证要求配置'
+      },
+      {
+        key :'parameterConfig3',
+        name :'先决条件配置'
+      },
+      {
+        key :'parameterConfig4',
+        name :'指令类型配置'
+      },
+      {
+        key :'parameterConfig5',
+        name :'工前会配置'
+      },
+      {
+        key :'parameterConfig6',
+        name :'共后会配置'
+      },
+      {
+        key :'parameterConfig7',
+        name :'风险分析单配置'
+      },
+      {
+        key :'parameterConfig8',
+        name :'试验专业配置'
+      },
+      {
+        key :'parameterConfig9',
+        name :'先决条件确认项配置'
+      }
+
     ],
   },
   {

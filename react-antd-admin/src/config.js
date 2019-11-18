@@ -9,8 +9,8 @@
 // 遵循统一的规范, 好维护, 交给其他人也比较简单
 
 module.exports = {
-  name: '中核管理系统',  // 项目的名字
-  favicon: 'http://jxy.me/favicon.ico',  // 设置网页的favicon, 可以是外链, 也可以是本地
+  name: '中国核电',  // 项目的名字
+  favicon: 'http://mv.asp-1.cn:60006/MV/resources/images/company-logo.png',  // 设置网页的favicon, 可以是外链, 也可以是本地
   footer: '<a target="_blank" href="http://jxy.me">chen qingbiao</a>版权所有 © 2015-2019',  // footer中显示的字, 可以嵌入html标签
 
   debug: true,  // 是否开启debug模式, 不会请求后端接口, 使用mock的数据
