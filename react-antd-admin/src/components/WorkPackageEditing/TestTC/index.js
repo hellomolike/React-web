@@ -1,5 +1,5 @@
-import { Tabs, Radio } from './node_modules/antd';
-import React from './node_modules/react';
+import { Tabs, Radio } from 'antd';
+import React from 'react';
 import ReadyPackage from '../ReadyPackage';
 const { TabPane } = Tabs;
 
