@@ -39,7 +39,7 @@ export default class ButtonEvent extends React.Component {
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           width='80%'
-          height="100%">
+          height="80%" >
                
                <div>
                    <TestTC/>

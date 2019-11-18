@@ -40,7 +40,7 @@ const routes = (
       <Route path="/" component={App}>
         <IndexRoute component={Welcome} />
         <Route path="index">
-          <Route path="option19" tableName="test" getComponent={DBTableContainer} />
+          <Route path="test" tableName="test" getComponent={DBTableContainer} />
         </Route>
         <Route path="GoingOnmv">
           <Route path="GoingOn3">

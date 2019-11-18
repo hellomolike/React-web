@@ -10,6 +10,14 @@ const columns = [
     {
         title: '操作',
         dataIndex: '操作',
+        // render:(
+        //     <div>
+        //     <Button type="small" shape="circle" icon="search" />
+        //     <Button type="small" shape="circle" icon="edit" />
+        //     <Button type="small" shape="circle" icon="retweet" />
+        //     <Button type="small" shape="circle" icon="setting" />
+        //     </div>
+        // ),
 
     },
     {
@@ -44,6 +52,7 @@ const columns = [
         title: '流程状态',
         dataIndex: '流程状态',
     },
+    
 ];
 
 const data = [];
@@ -59,6 +68,7 @@ for (let i = 0; i < 46; i++) {
         工单任务标题: `测试工作申请【T190929389${i}】`,
         工单任务编号: `T190929389${i}`,
         电厂代码: `XNPC`,
+        
     });
 
 

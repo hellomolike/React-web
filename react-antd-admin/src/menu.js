@@ -16,6 +16,12 @@ const sidebarMenu = [
     key: 'index',  // route时url中的值
     name: '我的工作台',  // 在菜单中显示的名称
     icon: 'play-circle',  // 图标是可选
+    child: [
+      {
+        key: 'test',
+        name: 'test',
+      },
+    ]
   },
   {
     key: 'devicmv',
