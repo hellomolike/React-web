@@ -1,6 +1,6 @@
 import { Table, Button } from 'antd';
 import React from 'react';
-
+import Testpopupeffect from '../Test popup effect';
 
 const columns = [
     {
@@ -59,8 +59,11 @@ const data = [];
 for (let i = 0; i < 46; i++) {
     data.push({
         key: i,
-        操作: <div><Button type="small" shape="circle" icon="search" />
-            <Button type="small" shape="circle" icon="edit" />
+        操作: <div>
+            <Button type="small" shape="circle" icon="search" />
+            <Button type="small" shape="circle">
+                <Testpopupeffect />
+            </Button>
             <Button type="small" shape="circle" icon="retweet" />
             <Button type="small" shape="circle" icon="setting" />
         </div>
