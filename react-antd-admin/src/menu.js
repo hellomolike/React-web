@@ -141,6 +141,22 @@ const sidebarMenu = [
             key:'GoingOn3-3',
             name :'测试弹窗'
           },
+          {
+            key:'GoingOn3-4',
+            name :'wait...'
+          },
+          {
+            key:'GoingOn3-5',
+            name :'wait...'
+          },
+          {
+            key:'GoingOn3-6',
+            name :'wait...'
+          },
+          {
+            key:'GoingOn3-7',
+            name :'wait...'
+          },
 
         ],
       },

@@ -18,8 +18,9 @@ import Error from './components/Error';
 // import WorkOrder from './components/WorkPackageEditing/WorkOrder';
 // import Isolation from './components/WorkPackageEditing/Isolation/index.js';
 import ReadyPackage from './components/WorkPackageEditing/ReadyPackage/index.js';
-import testTC from './components/WorkPackageEditing/TestTC/index.js';
-import ButtonEvent from './components/WorkPackageEditing/ButtonEvent/index.js';
+import Testtabeffect from './components/WorkPackageEditing/Test tab effect/index.js';
+import Testpopupeffect from './components/WorkPackageEditing/Test popup effect/index.js';
+
 
 //import DBTable from './components/DBTable';
 
@@ -45,8 +46,8 @@ const routes = (
         <Route path="GoingOnmv">
           <Route path="GoingOn3">
             <Route path="GoingOn3-1" component={ReadyPackage} />
-            <Route path="GoingOn3-2" component={testTC} />
-            <Route path="GoingOn3-3" component={ButtonEvent} />
+            <Route path="GoingOn3-2" component={Testtabeffect} />
+            <Route path="GoingOn3-3" component={Testpopupeffect} />
           </Route>
         </Route>
 
