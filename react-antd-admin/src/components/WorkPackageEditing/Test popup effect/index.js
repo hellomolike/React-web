@@ -1,9 +1,7 @@
 import { Modal, Button } from 'antd';
 import React from 'react';
-import TestTC from '../TestTC';
-
-
-export default class ButtonEvent extends React.Component {
+import Testtabeffect from '../Test tab effect';
+export default class Testpopupeffect extends React.Component {
   state = {
     loading: false,
     visible: false,
@@ -30,19 +28,17 @@ export default class ButtonEvent extends React.Component {
     const { visible, loading } = this.state;
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal with customized footer
+        <Button type="small" shape="circle" icon="edit" onClick={this.showModal}>
         </Button>
         <Modal
           visible={visible}
           title="工作包编辑"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width='80%'
-          height="80%" >
-               
+          width='60%'
+          height="60%" >
                <div>
-                   <TestTC/>
+                   <Testtabeffect/>
                </div>
         </Modal>
         
