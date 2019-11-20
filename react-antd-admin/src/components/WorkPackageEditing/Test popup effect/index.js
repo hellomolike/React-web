@@ -1,6 +1,7 @@
 import { Modal, Button } from 'antd';
 import React from 'react';
 import Testtabeffect from '../Test tab effect';
+import './index.less';
 export default class Testpopupeffect extends React.Component {
   state = {
     loading: false,
@@ -35,8 +36,8 @@ export default class Testpopupeffect extends React.Component {
           title="工作包编辑"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width='60%'
-          height="60%" >
+          width='100%'
+          height="100%" >
                <div>
                    <Testtabeffect/>
                </div>
