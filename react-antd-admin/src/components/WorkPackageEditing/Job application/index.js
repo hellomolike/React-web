@@ -20,11 +20,11 @@ const columns = [
     },
     {
         title: '电厂',
-        dataIndex: '电厂代码',
+        dataIndex: '电厂',
     },
     {
         title: '机组',
-        dataIndex: '机组号',
+        dataIndex: '机组',
     },
     {
         title: '系统',
@@ -35,16 +35,17 @@ const columns = [
         dataIndex: '设备编码',
     },
     {
-        title: '工单类型',
-        dataIndex: '工单类型',
+        title: '申请状态',
+        dataIndex: '申请状态',
     },
     {
-        title: '流程状态',
-        dataIndex: '流程状态',
+        title: '申请人',
+        dataIndex: '申请人',
     },
 
+
 ];
-const { Search } = Input;
+
 const data = [];
 for (let i = 0; i < 46; i++) {
     data.push({
@@ -59,7 +60,11 @@ for (let i = 0; i < 46; i++) {
         ,
         工单任务标题: `测试工作申请【T190929389${i}】`,
         工单任务编号: `T190929389${i}`,
-        电厂代码: `XNPC`,
+        电厂: `大秦`,
+        申请状态: `已通过`,
+        机组:`6号`,
+        申请人:`李荣浩`,
+
     });
 }
 
