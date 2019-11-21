@@ -5,6 +5,7 @@ import WorkOverView from '../WorkOverView';
 import Isolation from '../Isolation';
 import Prerequisites from '../Prerequisites';
 import WorkOrder from '../WorkOrder';
+import Jobapplication from '../Job application';
 
 const { TabPane } = Tabs;
 
@@ -51,7 +52,7 @@ class Tabeffect extends React.Component {
                     </TabPane>
                     <TabPane tab="工作申请" key="6">
                         <div>
-                            hello everyone!
+                           <Jobapplication />
                         </div>
                     </TabPane>
                     <TabPane tab="工前会" key="7">
