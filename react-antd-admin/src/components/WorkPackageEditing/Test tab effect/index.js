@@ -6,6 +6,10 @@ import Isolation from '../Isolation';
 import Prerequisites from '../Prerequisites';
 import WorkOrder from '../WorkOrder';
 import Jobapplication from '../Job application';
+import Preworkmetting from '../Pre-work meeting';
+import Executionprocedure from '../Execution procedure';
+import TongjiXinxi from '../Associated document';
+import Qualityplan from '../Quality Plan';
 
 const { TabPane } = Tabs;
 
@@ -57,22 +61,22 @@ class Tabeffect extends React.Component {
                     </TabPane>
                     <TabPane tab="工前会" key="7">
                         <div>
-                            hello everyone!
+                            <Preworkmetting />
                         </div>
                     </TabPane>
                     <TabPane tab="执行规程" key="8">
                         <div>
-                            hello everyone!
+                        <Executionprocedure />
                         </div>
                     </TabPane>
                     <TabPane tab="关联文档" key="9">
                         <div>
-                            hello everyone!
+                        <TongjiXinxi />
                         </div>
                     </TabPane>
                     <TabPane tab="质量计划" key="10">
                         <div>
-                            hello everyone!
+                            <Qualityplan />
                         </div>
                     </TabPane>
                     <TabPane tab="相关人员" key="11">
