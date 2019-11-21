@@ -6,7 +6,7 @@ import Other from './other';
 import { Button } from 'antd';
 import { Input } from 'antd';
 import { Form } from 'antd';
-
+import { Collapse } from 'antd';
 
 
 
@@ -18,9 +18,12 @@ function onChange(e, value) {
 // 将引入类变成常量，用来继承
 const Component = React.Component;
 
-
+function callback(key) {
+    console.log(key);
+  }
 //注意这个类，必须继承自Component
 class WorkOverView extends Component {
+    
 
     constructor(props) {
         super(props);
@@ -49,7 +52,10 @@ class WorkOverView extends Component {
         event.preventDefault();
     }
     render() {
+        const { Panel } = Collapse;
         return (
+            <Collapse defaultActiveKey={['1']} onChange={callback}>
+            <Panel header="工作概述" key="1">
 
             <Form onSubmit={this.handleSubmit}>
                 <fieldset >
@@ -59,7 +65,7 @@ class WorkOverView extends Component {
                             <div className="from-inner">
                                 <div className="from-flex">
                                     工单任务编号
-                                    <Input size="large" placeholder="large size" value="T185513 " className="from-item" />
+                                    <Input size="large"  value="T185513 " className="from-item" />
                                     {/* <Input type="text" value="T190929902" className="from-item"></Input> */}
                                 </div>
                                 <div className="from-flex">
@@ -205,6 +211,8 @@ class WorkOverView extends Component {
                
 
             </Form>
+            </Panel>
+            </Collapse>
 
         );
     }

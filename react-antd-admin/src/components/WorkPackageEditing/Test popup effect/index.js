@@ -1,7 +1,9 @@
 import { Modal, Button } from 'antd';
 import React from 'react';
-import Testtabeffect from '../Test tab effect';
 import './index.less';
+import Tabeffect from '../Test tab effect';
+
+
 export default class Testpopupeffect extends React.Component {
   state = {
     loading: false,
@@ -39,7 +41,7 @@ export default class Testpopupeffect extends React.Component {
           width='100%'
           height="100%" >
                <div>
-                   <Testtabeffect/>
+                   <Tabeffect />
                </div>
         </Modal>
         

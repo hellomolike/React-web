@@ -1,13 +1,14 @@
 import { Tabs, Radio } from 'antd';
 import React from 'react';
-import ReadyPackage from '../ReadyPackage';
 import WorkOverView from '../WorkOverView';
-import WorkOrder from '../WorkOrder';
+
 import Isolation from '../Isolation';
 import Prerequisites from '../Prerequisites';
+import WorkOrder from '../WorkOrder';
+
 const { TabPane } = Tabs;
 
-class Testtabeffect extends React.Component {
+class Tabeffect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,12 +29,6 @@ class Testtabeffect extends React.Component {
                    
                 </Radio.Group>
                 <Tabs tabPosition={mode} style={{ height:"auto"}}>
-
-                    <TabPane tab="TAB-1" key="1">
-                        <div>
-                            <ReadyPackage />
-                        </div>
-                    </TabPane>
                     <TabPane tab="工作概述" key="2">
                         <div>
                            <WorkOverView />
@@ -135,4 +130,4 @@ class Testtabeffect extends React.Component {
     }
 }
 
-export default Testtabeffect;
+export default Tabeffect;
