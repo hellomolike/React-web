@@ -2,6 +2,7 @@ import { Collapse, Input, Button, Table } from 'antd';
 import React from 'react';
 
 import './index.less';
+import Addfile from './Addfile/Addfile';
 const columns = [
     {
         title: '序号',
@@ -12,37 +13,22 @@ const columns = [
         dataIndex: '操作',
     },
     {
-        title: '会议标题',
-        dataIndex: '会议标题',
+        title: '编号',
+        dataIndex: '编号',
     },
     {
-        title: '工单类型',
-        dataIndex: '工单类型',
+        title: '标题',
+        dataIndex: '标题',
     },
     {
-        title: '工作负责人',
-        dataIndex: '工作负责人',
+        title: '上传时间',
+        dataIndex: '上传时间',
     },
     {
-        title: '召开人',
-        dataIndex: '召开人',
+        title: '备注',
+        dataIndex: '备注',
     },
-    {
-        title: '召开时间',
-        dataIndex: '召开时间',
-    },
-    {
-        title: '完成时间',
-        dataIndex: '完成时间',
-    },
-    {
-        title: '工前会状态',
-        dataIndex: '工前会状态',
-    },
-    {
-        title: '是否已发送通知',
-        dataIndex: '是否已发送通知',
-    },
+   
 
 
 ];
@@ -52,23 +38,16 @@ for (let i = 0; i < 46; i++) {
     data.push({
         key: i,
         操作: <div>
-
-            <Button type="small" shape="circle" icon="search">
-                {/* <Testpopupeffect /> */}
-            </Button>
             <Button type="small" shape="circle" icon="edit" />
+            <Button type="small" shape="circle" icon="download" />
+            <Button type="small" shape="circle" icon="delete" />
 
         </div>
         ,
-        会议标题: `测试工作申请【T190929389${i}】`,
-        工单类型: `标准工单`,
-        工作负责人: `陈澄`,
-        召开人: `陈澄`,
-        召开时间: `2019年12月6号`,
-        完成时间: `2019年12月18号`,
-        工前会状态: `准备就绪`,
-        是否已发送通知: `否`
-
+        标题: `测试工作申请【T190929389${i}】`,
+        编号: `编号9527${i}`,
+        上传时间: `1997年`,
+        备注: `come from hongkong`,
     });
 }
 
@@ -149,7 +128,13 @@ export default class Executionprocedure extends React.Component {
                         <div>
                             快速查询：
                             <Input size="large" placeholder="会议标题" className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
-                            <Button type="primary" shape="circle" icon="search"></Button>
+                            <Button type="primary" shape="circle" icon="search"></Button>&nbsp;
+                            <Button type="primary" shape="circle">
+                                <Addfile/>    
+                            </Button>&nbsp;
+                            <Button type="primary" shape="circle" icon="delete"></Button>&nbsp;
+
+
                         </div>
                         <div style={{ margin: '30px 0' }} />
                         <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
@@ -161,7 +146,11 @@ export default class Executionprocedure extends React.Component {
                         <div>
                             快速查询：
                             <Input size="large" placeholder="会议标题" className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
-                            <Button type="primary" shape="circle" icon="search"></Button>
+                            <Button type="primary" shape="circle" icon="search"></Button>&nbsp;
+                            <Button type="primary" shape="circle">
+                                <Addfile/>    
+                            </Button>&nbsp;
+                            <Button type="primary" shape="circle" icon="delete"></Button>&nbsp;
                         </div>
                         <div style={{ margin: '30px 0' }} />
                         <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
