@@ -8,7 +8,7 @@ import WorkOrder from '../WorkOrder';
 import Jobapplication from '../Job application';
 import Preworkmetting from '../Pre-work meeting';
 import Executionprocedure from '../Execution procedure';
-import TongjiXinxi from '../Associated document';
+import Associateddocument from '../Associated document';
 import Qualityplan from '../Quality Plan';
 
 const { TabPane } = Tabs;
@@ -71,7 +71,7 @@ class Tabeffect extends React.Component {
                     </TabPane>
                     <TabPane tab="关联文档" key="9">
                         <div>
-                        <TongjiXinxi />
+                        <Associateddocument />
                         </div>
                     </TabPane>
                     <TabPane tab="质量计划" key="10">

@@ -1,4 +1,4 @@
-import { Table, Button, Input } from 'antd';
+import { Table, Button, Input,Collapse } from 'antd';
 import React from 'react';
 import './index.less';
 const columns = [
@@ -63,8 +63,8 @@ for (let i = 0; i < 46; i++) {
         工单类型: `标准工单`,
         工作负责人: `陈澄`,
         召开人: `陈澄`,
-        召开时间:`2019年12月6号`,
-        完成时间:`2019年12月18号`,
+        召开时间: `2019年12月6号`,
+        完成时间: `2019年12月18号`,
         工前会状态: `准备就绪`,
         是否已发送通知: `否`
 
@@ -83,7 +83,7 @@ export default class Preworkmetting extends React.Component {
     };
 
     render() {
-        
+        const {Panel} =Collapse;
         const { selectedRowKeys } = this.state;
         const rowSelection = {
             selectedRowKeys,
@@ -129,17 +129,22 @@ export default class Preworkmetting extends React.Component {
                 },
             ],
         };
-        return (<div>
-            <div>
-                快速查询：
-                <Input size="large"  placeholder="会议标题"  className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
-                <Button  type="primary" shape="circle" icon="search"></Button>
-                
+        return (
+            <Collapse defaultActiveKey={['1']}>
+                <Panel header="工前会" key="1">
+                    <div>
+                        <div>
+                            快速查询：
+                            <Input size="large" placeholder="会议标题" className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
+                            <Button type="primary" shape="circle" icon="search"></Button>
+                        </div>
+                        <div style={{ margin: '30px 0' }} />
+                        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                    </div>
+                </Panel>
 
-            </div>
-            <div style={{ margin: '30px 0' }} />
-            <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-        </div>
+            </Collapse>
+
         );
     }
 }

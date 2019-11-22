@@ -1,224 +1,299 @@
+import { Collapse, Input, Radio, DatePicker, InputNumber } from 'antd';
 import React from 'react';
-import { Checkbox } from 'antd';
+import { Row, Col } from 'antd';
+import moment from 'moment';
 import './index.less';
-import Time from './time';
-import Other from './other';
-import { Button } from 'antd';
-import { Input } from 'antd';
-import { Form } from 'antd';
-import { Collapse } from 'antd';
+const dateFormat = 'YYYY/MM/DD';
 
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
+export default class WokrOverView extends React.Component {
 
+    state = {
+        value: 1,
+    };
 
-function onChange(e, value) {
-    //
-    console.log(`checked = `, e);
-}
-// 将引入类变成常量，用来继承
-const Component = React.Component;
-
-function callback(key) {
-    console.log(key);
-  }
-//注意这个类，必须继承自Component
-class WorkOverView extends Component {
-    
-
-    constructor(props) {
-        super(props);
-        this.state = { a: 'coconut' };
-        this.state = { b: 'coconut' };
-        this.state = { c: 'coconut' };
-        this.handleChangeA = this.handleChangeA.bind(this);
-        this.handleChangeB = this.handleChangeB.bind(this);
-        this.handleChangeC = this.handleChangeC.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChangeA(event) {
-        this.setState({ a: event.target.value });
-    }
-    handleChangeB(event) {
-        this.setState({ b: event.target.value });
-    }
-    handleChangeC(event) {
-        this.setState({ c: event.target.value });
-    }
-
-    handleSubmit(event) {
-        alert('当前提交表单为:{专业:' + this.state.a + ',  优先级:' + this.state.b +
-            '   ,设备分级:' + this.state.c + '}');
-        event.preventDefault();
-    }
+    onChange = e => {
+        console.log('radio checked', e.target.value);
+        this.setState({
+            value: e.target.value,
+        });
+    };
     render() {
+
         const { Panel } = Collapse;
         return (
-            <Collapse defaultActiveKey={['1']} onChange={callback}>
-            <Panel header="工作概述" key="1">
+            <div>
+                <Collapse defaultActiveKey={['1']}>
+                    <Panel header="工作概述" key="1">
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                工单任务编号：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                任务状态：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                工单类型：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                生产单元：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                电厂代码：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                机组号：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                系统号：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                设备编码：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                系统/设备名称：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                专业：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                优先级：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                设备分级：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                厂区房间：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                核安全等级：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                维修分级：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                质保等级：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                计划人数：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                维修类别：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                责任班组：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                责任人：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                防异物分级：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                工作班组：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                工作负责人：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                工作准备人：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                作业类型：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                设备管辖处室：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                危险化学品：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    日常大修标识：<div></div>
+                                    <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                大修代码：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                变更项目编号：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row >
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 22, offset: 2 }}>
+                                工单任务标题：<Input></Input>
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                等效工单编号：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                取消/等效类型：<Input />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                操作人：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                时间：<Input />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 22, offset: 2 }}>
 
-            <Form onSubmit={this.handleSubmit}>
-                <fieldset >
-                    <legend>工作概述</legend>
-                    <div className='from-wrapper'>
-                        <div className="from-in">
-                            <div className="from-inner">
-                                <div className="from-flex">
-                                    工单任务编号
-                                    <Input size="large"  value="T185513 " className="from-item" />
-                                    {/* <Input type="text" value="T190929902" className="from-item"></Input> */}
-                                </div>
-                                <div className="from-flex">
-                                    生产单元:
-                                    <Input type="text" value="霞浦0#项目" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    系统号:
-                                    <Input type="text" value="ABP" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    专业:
-                                    <select className="from-item" value={this.state.a} onChange={this.handleChangeA}>
-                                        <option value="工艺">工艺</option>
-                                        <option value="电气">电气</option>
-                                        <option value="机械">机械</option>
-                                        <option value="其他">其他</option>
-                                    </select>
-                                </div>
+                                原因：<div></div>
+                                <textArea className="textarea_input" />
+                            </Col>
+                        </Row>
+                    </Panel>
 
-                                <div className="from-flex">
-                                    运行隔离:
-                                    <Checkbox onChange={onChange}>日常</Checkbox>
-                                    <Checkbox onChange={onChange}>大修</Checkbox>
-                                </div>
-                            </div>
-                            <div className="from-inner">
-                                <div className="from-flex">
-                                    任务状态:
-                                    <Input type="text" value="工作包完成准备" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    电厂代码
-                                    <Input type="text" value="XNPC" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    设备编码:
-                                    <Input type="text" value="0ABPWX001" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    优先级:
-                                    <select className="from-item" value={this.state.b} onChange={this.handleChangeB}>
-                                        <option value="立即响应y">立即响应</option>
-                                        <option value="24小时响应">24小时响应</option>
-                                        <option value="72小时响应">72小时响应</option>
-                                        <option value="一周内响应">一周内响应</option>
-                                    </select>
-                                </div>
-                                <div className="from-flex">
-                                    大修代码:
-                                    <Input type="text" value="101" className="from-item"></Input>
-                                </div>
-                            </div>
-                            <div className="from-inner">
-                                <div className="from-flex">
-                                    工单类型:
-                                    <Input type="text" value="标准工单" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    机组号:
-                                    <Input type="text" value="0" className="from-item" />
-                                </div>
-                                <div className="from-flex">
-                                    设备/系统名称:
-                                    <Input type="text" value="0 ABP 启动给水泵入口放气阀" className="from-item"></Input>
-                                </div>
-                                <div className="from-flex">
-                                    设备分级:
-                                    <select className="from-item" value={this.state.c} onChange={this.handleChangeC}>
-                                        <option value="A关键">A关键</option>
-                                        <option value="B关键">B关键</option>
-                                        <option value="C关键">C关键</option>
-                                        <option value="D关键">D关键</option>
-                                    </select>
-                                </div>
-                                <div className="from-flex">
-                                    变更项目编号:
-                                    <Input type="text" className="from-item"></Input>
-                                </div>
-                            </div>
-                        </div>
+                </Collapse>
+                <Collapse defaultActiveKey={['2']}>
+                    <Panel header="计划" key="2">
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <span>计划开工时间:</span>
+                                <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <span>计划完工时间:</span>
 
-                        <div>
-                            <div className="from-flex">
-                                工作任务标题:
-                                <Input type="text" value=" 测试工作申请【PC-20190918】" className="from-items"></Input>
-                            </div>
-                            <div className="from-flexs">
-                                <div className="from-items">
-                                    <div className="from-flex">
-                                        等效工单编号:
-                                        <Input type="text" className="from-item"></Input>
-                                    </div>
-                                </div>
-                                <div className="from-items">
-                                    <div className="from-flex">
-                                        取消/等效类型:
-                                        <Input type="text" className="from-item"></Input>
-                                    </div>
-                                </div>
-                                <div className="from-items">
-                                    <div className="from-flex">
-                                        操作人:
-                                        <Input type="text" className="from-item"></Input>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="from-items">
-                                <div className="from-flex">
-                                    时间:
-                                    <Input type="text" value="" className="from-items"></Input>
-                                </div>
-                            </div>
-                            <div className="from-flex">
-                                原因:
-                                <textarea name="" rows="4" className="from-items"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
+                                <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <span>工时（小时）:</span>
 
-                <fieldset >
-                    <legend>计划</legend>
-                    <div>
-                        <Time />
-                    </div>
-                </fieldset>
+                                <InputNumber min={1} max={10} defaultValue={1} />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                建议开工时间:
+                                    <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                建议完工时间:
+                                    <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                计划完工延期时间:
+                                <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col className="row_item" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                PM最早开工时间:
+                                    <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 11, offset: 2 }}>
+                                PM最晚完开工时间:
+                                    <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
+                            </Col>
+                        </Row>
+                    </Panel>
+                </Collapse>
+                <Collapse defaultActiveKey={['3']}>
+                    <Panel header="其他" key="3">
+                        <Row>
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    日常大修标识：
+                            <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 11, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    大修标识：
+                            <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    日常大修标识：
+                            <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                            <Col className="row_item" xs={{ span: 11, offset: 1 }} lg={{ span: 11, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    大修标识：
+                            <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                        </Row>
+                        <div style={{ margin: '24px 0' }} />
+                        <Row>
+                            <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                <Radio.Group onChange={this.onChange} value={this.state.value}>
+                                    日常大修标识：
+                            <Radio value={1}>A</Radio>
+                                    <Radio value={2}>B</Radio>
+                                </Radio.Group>
+                            </Col>
+                            <Col className="row_3" xs={{ span: 11, offset: 1 }} lg={{ span: 7.5, offset: 2 }}>
+                               <span>
+                                     取消/等效类型：
+                               </span>
+                               <Input></Input>
 
-                <fieldset >
-                    <legend>其他</legend>
-                    <div>
-                        <Other />
-                    </div>
-
-                   
-                </fieldset>
-                {/* <Input id="bottom" type="submit" value="提交" /> */}
-                <div>
-                    <Button id="save_but" type="primary">保存</Button>
-
-                    <Button id="submit_but" type="primary">提交</Button>
-                </div>
-               
-
-            </Form>
-            </Panel>
-            </Collapse>
-
+                                
+                            </Col>
+                            <Col className="row_3" xs={{ span: 5, offset: 1 }} lg={{ span: 7.5, offset: 2 }}>
+                                操作人：<Input />
+                            </Col>
+                        </Row>
+                    </Panel>
+                </Collapse>
+            </div>
         );
+
     }
 }
-
-//抛出类,这是es6 语法 必须这么写
-export default WorkOverView;
-//jsx 简单理解 ，遇到 <> 就解析为html，遇到{}就解析为js
-

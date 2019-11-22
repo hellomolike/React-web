@@ -1,4 +1,4 @@
-import { Table, Button, Input } from 'antd';
+import { Table, Button, Input,Collapse } from 'antd';
 import React from 'react';
 import './index.less';
 const columns = [
@@ -62,8 +62,8 @@ for (let i = 0; i < 46; i++) {
         工单任务编号: `T190929389${i}`,
         电厂: `大秦`,
         申请状态: `已通过`,
-        机组:`6号`,
-        申请人:`李荣浩`,
+        机组: `6号`,
+        申请人: `李荣浩`,
 
     });
 }
@@ -80,7 +80,7 @@ export default class Jobapplication extends React.Component {
     };
 
     render() {
-        
+        const{Panel}=Collapse
         const { selectedRowKeys } = this.state;
         const rowSelection = {
             selectedRowKeys,
@@ -126,17 +126,24 @@ export default class Jobapplication extends React.Component {
                 },
             ],
         };
-        return (<div>
-            <div>
-                快速查询：
-                <Input size="large"  placeholder="工作申请编号/工作申请标题"  className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
-                <Button  type="primary">search</Button>
-                
+        return (
+            <Collapse defaultActiveKey={['1']}>
+                <Panel header="工作申请" key="1">
+                    <div>
+                        <div>
+                            快速查询：
+                            <Input size="large" placeholder="工作申请编号/工作申请标题" className="input_sty"></Input>&nbsp;&nbsp;&nbsp;
+                            <Button type="primary">search</Button>
+                        </div>
+                        <div style={{ margin: '30px 0' }} />
+                        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+                    </div>
+                </Panel>
+            </Collapse>
 
-            </div>
-            <div style={{ margin: '30px 0' }} />
-            <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-        </div>
+
+
+
         );
     }
 }
