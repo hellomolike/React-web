@@ -278,16 +278,18 @@ export default class WokrOverView extends React.Component {
                                     <Radio value={2}>B</Radio>
                                 </Radio.Group>
                             </Col>
-                            <Col className="row_3" xs={{ span: 11, offset: 1 }} lg={{ span: 7.5, offset: 2 }}>
-                               <span>
-                                     取消/等效类型：
-                               </span>
+                            
+                            <Col className="row_3" xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                                    取消/等效类型：
                                <Input></Input>
-
-                                
                             </Col>
-                            <Col className="row_3" xs={{ span: 5, offset: 1 }} lg={{ span: 7.5, offset: 2 }}>
-                                操作人：<Input />
+                            
+                        </Row>
+                        <Row>
+                         
+                            <Col className="row_3" xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+                            操作人：
+                            <Input></Input>
                             </Col>
                         </Row>
                     </Panel>
