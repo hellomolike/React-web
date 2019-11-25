@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import moment from 'moment';
 import './index.less';
 const dateFormat = 'YYYY/MM/DD';
-
+const {TextArea}= Input;
 const text = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
@@ -182,7 +182,7 @@ export default class WokrOverView extends React.Component {
                             <Col xs={{ span: 5, offset: 1 }} lg={{ span: 22, offset: 2 }}>
 
                                 原因：<div></div>
-                                <textArea className="textarea_input" />
+                                <TextArea />
                             </Col>
                         </Row>
                     </Panel>
