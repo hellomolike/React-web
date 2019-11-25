@@ -143,7 +143,7 @@ const sidebarMenu = [
           },
           {
             key:'GoingOn3-4',
-            name :'wait...'
+            name :'统计员工信息'
           },
           {
             key:'GoingOn3-5',

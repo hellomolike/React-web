@@ -10,6 +10,7 @@ import Preworkmetting from '../Pre-work meeting';
 import Executionprocedure from '../Execution procedure';
 import Associateddocument from '../Associated document';
 import Qualityplan from '../Quality Plan';
+import Relatedpersonnel from '../Related personnel';
 
 const { TabPane } = Tabs;
 
@@ -81,7 +82,7 @@ class Tabeffect extends React.Component {
                     </TabPane>
                     <TabPane tab="相关人员" key="11">
                         <div>
-                            hello everyone!
+                            <Relatedpersonnel />
                         </div>
                     </TabPane>
                     <TabPane tab="风险分析" key="12">

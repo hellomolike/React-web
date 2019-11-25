@@ -1,8 +1,8 @@
 
-import { Button } from 'antd';
+import { Button, Collapse, Input } from 'antd';
 import React from 'react';
 import './index.less';
-
+const {TextArea}=Input;
 
 class WorkOrder extends React.Component {
 
@@ -16,6 +16,7 @@ class WorkOrder extends React.Component {
 
 
   render() {
+    const { Panel } = Collapse;
 
     // const { value } = this.state;
     const onChange = e => {
@@ -23,37 +24,40 @@ class WorkOrder extends React.Component {
     };
 
     return (
-      <fieldset>
-        <legend>工作指令</legend>
-        <div>
-          <div id="font_title">工作来源：</div>
-          <textArea className="textArea_input" placeholder="textarea with clear icon"  onChange={onChange} />
+      <Collapse defaultActiveKey={['1']}>
+        <Panel header="工作指令" key="1">
+          <div>
+            <div id="font_title">工作来源：</div>
+            <div>
+            <TextArea></TextArea>
+          </div>
 
-          <div style={{ margin: '24px 0' }} />
-          <div id="font_title">缺陷分析：</div>
-          <textArea className="textArea_input" placeholder="textarea with clear icon"  onChange={onChange} />
+            <div style={{ margin: '24px 0' }} />
+            <div id="font_title">缺陷分析：</div>
+            <div>
+            <TextArea ></TextArea>
+          </div>
 
-          <div style={{ margin: '24px 0' }} />
-          <div id="font_title">工器具材料：</div>
-          <textArea className="textArea_input" placeholder="textarea with clear icon"  onChange={onChange} />
+            
+            <div style={{ margin: '24px 0' }} />
+            <div id="font_title">工器具材料：</div>
+            <div>
+            <TextArea></TextArea>
+          </div>
 
-          <div style={{ margin: '24px 0' }} />
-          <div id="font_title">工器具材料：</div>
-          <textArea className="textArea_input" placeholder="textarea with clear icon"  onChange={onChange} />
-
-          <div style={{ margin: '24px 0' }} />
-          <div id="font_title">工作步骤：</div>
-          <textArea className="textArea_input2" placeholder="textarea with clear icon"  onChange={onChange} />
-        </div>
-        <div>
-          <Button id="save_but" type="primary">保存</Button>
-
-          <Button id="submit_but" type="primary">关闭</Button>
-        </div>
-
+            <div style={{ margin: '24px 0' }} />
+            <div id="font_title">工作步骤：</div>
+            <div>
+            <TextArea></TextArea>
+          </div>
+          </div>
+         
+        </Panel>
+      </Collapse>
 
 
-      </fieldset>
+
+
     );
   }
 }

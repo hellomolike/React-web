@@ -38,7 +38,7 @@ export default class Testpopupeffect extends React.Component {
           title="工作包编辑"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width='80%'
+          width='100%'
           height="80%" >
                <div>
                    <Tabeffect />
