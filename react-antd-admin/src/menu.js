@@ -147,11 +147,11 @@ const sidebarMenu = [
           },
           {
             key:'GoingOn3-5',
-            name :'wait...'
+            name :'测试文件上传'
           },
           {
             key:'GoingOn3-6',
-            name :'wait...'
+            name :'测试树形控件'
           },
           {
             key:'GoingOn3-7',

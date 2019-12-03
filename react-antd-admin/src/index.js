@@ -21,6 +21,7 @@ import ReadyPackage from './components/WorkPackageEditing/ReadyPackage/index.js'
 import Testtabeffect from './components/WorkPackageEditing/Test tab effect/index.js';
 import Testpopupeffect from './components/WorkPackageEditing/Test popup effect/index.js';
 import Relatedpersonnel from './components/WorkPackageEditing/Related personnel/index.js';
+import TestTreebeard from './components/TestTreebeard/index.js';
 
 
 //import DBTable from './components/DBTable';
@@ -50,6 +51,8 @@ const routes = (
             <Route path="GoingOn3-2" component={Testtabeffect} />
             <Route path="GoingOn3-3" component={Testpopupeffect} />
             <Route path="GoingOn3-4" component={Relatedpersonnel}/>
+            {/* <Route path="GoingOn3-5" component={TestWebUploader}/> */}
+            <Route path="GoingOn3-6" component={TestTreebeard}/>
           </Route>
         </Route>
 
