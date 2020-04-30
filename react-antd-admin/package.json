@@ -60,7 +60,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "prop-types": "^15.7.2",
     "rc": "^1.2.8",
     "react-treebeard": "^3.2.4",
